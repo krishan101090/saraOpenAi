@@ -4,7 +4,7 @@ import { SupabaseVectorStore } from 'langchain/vectorstores';
 import { PromptTemplate } from 'langchain/prompts';
 
 const CONDENSE_PROMPT =
-  PromptTemplate.fromTemplate(`Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question. At the end of standalone question add this 'Answer the question in German language.' If you do not know the answer reply with 'Hmm, I'm not sure. Please contact with contact@operabase.com
+  PromptTemplate.fromTemplate(`Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question. At the end of standalone question add this 'Answer the question in German language.' If you do not know the answer reply with 'Hmm, I'm sorry. Please contact with contact@operabase.com
 Follow Up Input: {question}
 Standalone question:`);
 
