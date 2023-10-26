@@ -1,6 +1,8 @@
 # Dependencies:
 /node_modules
 
+scrappingData.json
+
 # Logs:
 npm-debug.log*
 yarn-debug.log*

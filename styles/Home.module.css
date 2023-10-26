@@ -13,7 +13,7 @@
 .textarea {
   position: relative;
   resize: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 1rem 2rem 1rem 2rem;
   width: 75vw;
   border-radius: 0.5rem;
@@ -63,7 +63,7 @@
 
 .apimessage {
   background: #f9fafb;
-  padding: 1.5rem;
+  padding: 1.2rem;
   color: #000;
   animation: fadein 0.5s;
 }
@@ -95,12 +95,12 @@
 
 .usermessage {
   background: #ffffff;
-  padding: 1.5rem;
+  padding: 1.2rem;
   color: #000;
 }
 
 .usermessagewaiting {
-  padding: 1.5rem;
+  padding: 1.2rem;
   color: #000;
   background: linear-gradient(to left, #07080938, #1a1c2024, #07080936);
   background-size: 200% 200%;
@@ -121,7 +121,7 @@
 
 .apimessage {
   background: #f9fafb;
-  padding: 1.5rem;
+  padding: 1.2rem;
   color: #000;
   animation: fadein 0.5s;
 }
