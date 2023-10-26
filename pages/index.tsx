@@ -19,7 +19,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi there! What would you like to learn about Operabase?',
+        message: 'Hello! How can I assist you with Operabase today?',
         type: 'apiMessage',
       },
     ],
@@ -34,6 +34,8 @@ export default function Home() {
   useEffect(() => {
     textAreaRef.current?.focus();
   }, []);
+
+  console.log('messageState', messageState);
 
   //handle form submission
   async function handleSubmit(e: any) {
@@ -131,32 +133,48 @@ export default function Home() {
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
-                {chatMessages.map((message, index) => {
-                  const icon = (
+              {chatMessages.map((message, index) => {
+                let icon;
+                let className;
+                if (message.type === 'apiMessage') {
+                  icon = (
+                    <Image
+                      src="/obIcon.svg"
+                      alt="AI"
+                      width="30"
+                      height="30"
+                      className={styles.boticon}
+                      priority
+                    />
+                  );
+                  className = styles.apimessage;
+                } else {
+                  icon = (
                     <Image
                       src="/usericon.png"
                       alt="Me"
-                      width="30"
-                      height="30"
+                      width="25"
+                      height="25"
                       className={styles.usericon}
                       priority
                     />
                   );
-                  const className =
+                  className =
                     loading && index === chatMessages.length - 1
                       ? styles.usermessagewaiting
                       : styles.usermessage;
-                  return (
-                    <div key={index} className={className}>
-                      {icon}
-                      <div className={styles.markdownanswer}>
-                        <ReactMarkdown linkTarget="_blank">
-                          {message.message}
-                        </ReactMarkdown>
-                      </div>
+                }
+                return (
+                  <div key={index} className={className}>
+                    {icon}
+                    <div className={styles.markdownanswer}>
+                      <ReactMarkdown linkTarget="_blank">
+                        {message.message}
+                      </ReactMarkdown>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
               </div>
             </div>
             <div className={styles.center}>

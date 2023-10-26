@@ -61,6 +61,13 @@
   fill: currentColor;
 }
 
+.apimessage {
+  background: #f9fafb;
+  padding: 1.5rem;
+  color: #000;
+  animation: fadein 0.5s;
+}
+
 .generatebutton:hover {
   background: #e4575726;
   border-radius: 0.2rem;
@@ -135,7 +142,7 @@
 }
 
 .markdownanswer {
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
 .markdownanswer a:hover {
@@ -191,31 +198,6 @@
   align-items: center;
 }
 
-.pointsnormal {
-  width: 90%;
-  height: 90%;
-}
-
-.pointsdim {
-  width: 90%;
-  height: 90%;
-  opacity: 0.25;
-}
-
-.footer {
-  color: #5f6368;
-  font-size: 0.8rem;
-  margin: 1.5rem;
-}
-
-.footer a {
-  font-weight: 500;
-  color: #7a7d81;
-}
-
-.footer a:hover {
-  opacity: 0.8;
-}
 
 /* Mobile */
 @media (max-width: 600px) {
