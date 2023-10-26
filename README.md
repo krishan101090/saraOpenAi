@@ -27,12 +27,12 @@ The `pageContent` and `metadata` will later be stored in your supabase database 
 
 - Add the `documents` table in the database and `match_documents` function in the supabase.
 
-## 🧑 Instructions for scraping and embedding
+## Instructions for scraping and embedding
 
-To run the scraping and embedding script in `scripts/scraper.ts` simply run:
+To run the scraping and embedding script in `scripts/scraper.ts` run:
 
 `npm run scraper`
 
 ## Run the app
 
-Once you've verified that the embeddings and content have been successfully added to your supabase table, you can run the app `npm run dev` and type a question to ask your website.
+`npm run dev` and type a question to ask your website.
