@@ -6,14 +6,6 @@
   padding: 2rem;
 }
 
-.header {
-  width: auto;
-}
-
-.header p {
-  text-align: center;
-}
-
 .cloudform {
   position: relative;
 }
@@ -225,7 +217,7 @@
   opacity: 0.8;
 }
 
-/* Mobile optimization */
+/* Mobile */
 @media (max-width: 600px) {
   .main {
     padding: 1rem;
@@ -236,27 +228,12 @@
     width: 22rem;
     height: 28rem;
   }
+
   .textarea {
     width: 22rem;
-  }
-  .topnav {
-    border: 1px solid black;
-    align-items: center;
-    padding: 0.85rem 0.75rem 0.85rem 0.75rem;
-  }
-
-  .navlogo {
-    font-size: 1.25rem;
-    width: 20rem;
   }
 
   .markdownanswer code {
     white-space: pre-wrap !important;
-  }
-
-  .footer {
-    font-size: 0.7rem;
-    width: 100%;
-    text-align: center;
   }
 }

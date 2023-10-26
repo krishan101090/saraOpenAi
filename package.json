@@ -1,9 +1,8 @@
 {
-  "name": "supabase-langchain-notion",
+  "name": "sara-chat-bot",
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
-  "author": "Mayooear",
   "type": "module",
   "scripts": {
     "dev": "next dev",
@@ -12,15 +11,13 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
-    "scrape-embed": "tsx -r dotenv/config scripts/scrape-embed.ts"
+    "scraper": "tsx -r dotenv/config scripts/scraper.ts"
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "^2.0.1",
     "@supabase/supabase-js": "^2.10.0",
     "axios": "^1.5.1",
     "cheerio": "1.0.0-rc.12",
-    "clsx": "^1.2.1",
-    "dotenv": "^16.0.3",
     "langchain": "^0.0.26",
     "next": "13.2.3",
     "react": "18.2.0",
@@ -41,13 +38,5 @@
     "tailwindcss": "^3.2.7",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5"
-  },
-  "keywords": [
-    "starter",
-    "notion",
-    "typescript",
-    "nextjs",
-    "langchain",
-    "openai"
-  ]
+  }
 }

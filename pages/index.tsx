@@ -1,11 +1,13 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import Layout from '@/components/layout';
-import styles from '@/styles/Home.module.css';
-import { Message } from '@/types/chat';
-import { fetchEventSource } from '@microsoft/fetch-event-source';
 import Image from 'next/image';
+import { fetchEventSource } from '@microsoft/fetch-event-source';
 import ReactMarkdown from 'react-markdown';
-import LoadingDots from '@/components/ui/LoadingDots';
+
+import { Message } from '@/types/chat';
+import Layout from '@/components/layout';
+import LoadingDots from '@/components/uiLibrary/LoadingDots';
+
+import styles from '@/styles/Home.module.css';
 
 export default function Home() {
   const [query, setQuery] = useState<string>('');
@@ -17,7 +19,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi there its Tom! What would like to learn about notion?',
+        message: 'Hi there! What would you like to learn about Operabase?',
         type: 'apiMessage',
       },
     ],
@@ -124,43 +126,26 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Thomas Frank Notion Guide ChatBot
+            ChatBot
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
                 {chatMessages.map((message, index) => {
-                  let icon;
-                  let className;
-                  if (message.type === 'apiMessage') {
-                    icon = (
-                      <Image
-                        src="/Thomas-Frank-Avatar.jpg"
-                        alt="AI"
-                        width="40"
-                        height="40"
-                        className={styles.boticon}
-                        priority
-                      />
-                    );
-                    className = styles.apimessage;
-                  } else {
-                    icon = (
-                      <Image
-                        src="/usericon.png"
-                        alt="Me"
-                        width="30"
-                        height="30"
-                        className={styles.usericon}
-                        priority
-                      />
-                    );
-                    // The latest message sent by the user will be animated while waiting for a response
-                    className =
-                      loading && index === chatMessages.length - 1
-                        ? styles.usermessagewaiting
-                        : styles.usermessage;
-                  }
+                  const icon = (
+                    <Image
+                      src="/usericon.png"
+                      alt="Me"
+                      width="30"
+                      height="30"
+                      className={styles.usericon}
+                      priority
+                    />
+                  );
+                  const className =
+                    loading && index === chatMessages.length - 1
+                      ? styles.usermessagewaiting
+                      : styles.usermessage;
                   return (
                     <div key={index} className={className}>
                       {icon}
@@ -189,7 +174,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? 'Waiting for response...'
-                        : 'How does notion api work?'
+                        : 'What is Operabase?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -205,7 +190,6 @@ export default function Home() {
                         <LoadingDots color="#000" />
                       </div>
                     ) : (
-                      // Send icon SVG in input field
                       <svg
                         viewBox="0 0 20 20"
                         className={styles.svgicon}
@@ -220,11 +204,6 @@ export default function Home() {
             </div>
           </main>
         </div>
-        <footer className="m-auto">
-          <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChain. Demo built by Mayo (Twitter: @mayowaoshin).
-          </a>
-        </footer>
       </Layout>
     </>
   );
