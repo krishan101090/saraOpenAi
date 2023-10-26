@@ -35,8 +35,6 @@ export default function Home() {
     textAreaRef.current?.focus();
   }, []);
 
-  console.log('messageState', messageState);
-
   //handle form submission
   async function handleSubmit(e: any) {
     e.preventDefault();
